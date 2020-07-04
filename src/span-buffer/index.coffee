@@ -180,16 +180,18 @@ class SpanBuffer extends SpanBranch
 
   getSpanRangeForCharacterRange: (location, length, chooseRight=false) ->
     if @getSpanCount() is 0
-      return {} =
+      return {
         location: 0
         length: 0
+      }
     start = @getSpanInfoAtLocation(location, chooseRight)
     end = @getSpanInfoAtLocation(location + length, chooseRight)
     if end.location is 0 and end.spanIndex isnt start.spanIndex
       end.spanIndex--
-    {} =
+    {
       location: start.spanIndex
       length: (end.spanIndex - start.spanIndex) + 1
+    }
 
   getSpanInfoAtCharacterIndex: (characterIndex) ->
     if characterIndex < @getLength()
@@ -231,9 +233,10 @@ class SpanBuffer extends SpanBranch
     if start.location is start.span.getLength()
       start.spanIndex++
     end = @sliceSpanAtLocation(location + length)
-    {} =
+    {
       spanIndex: start.spanIndex
       count: (end.spanIndex - start.spanIndex) + 1
+    }
 
   replaceSpansFromLocation: (location, spans) ->
     totalLength = 0

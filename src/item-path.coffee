@@ -23,10 +23,11 @@ class ItemPath
     if parsedPath
       keywords = parsedPath.keywords
 
-    {} =
+    {
       parsedPath: parsedPath
       keywords: keywords
       error: exception
+    }
 
   @evaluate: (itemPath, contextItem, options) ->
     options ?= {}

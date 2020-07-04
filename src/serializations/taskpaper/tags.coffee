@@ -73,9 +73,10 @@ parseTags = (text, callback) ->
     if foundTag
       trailingMatch = text.match(trailingTagsRegex)
 
-  {} =
+  {
     tags: tags
     trailingMatch: trailingMatch
+  }
 
 syncTagAttributeToItemBody = (item, attributeName, value) ->
   if tagName = encodeNameForAttributeName(attributeName)

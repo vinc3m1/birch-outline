@@ -38,7 +38,7 @@ module.exports = (type) ->
   outline.undoManager.removeAllActions()
   Outline.addOutline(outline)
 
-  {} =
+  {
       outline: outline
       root: outline.root
       one: outline.getItemForID('1')
@@ -47,3 +47,4 @@ module.exports = (type) ->
       four: outline.getItemForID('4')
       five: outline.getItemForID('5')
       six: outline.getItemForID('6')
+  }

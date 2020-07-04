@@ -60,11 +60,12 @@ class SpanLeaf
         spanIndex++
         spanLocation += childLength
       else
-        return {} =
+        return {
           span: each
           location: location
           spanIndex: spanIndex
           spanLocation: spanLocation
+        }
 
   iterateSpans: (start, count, operation) ->
     for i in [start...start + count]

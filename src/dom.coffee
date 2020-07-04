@@ -27,16 +27,18 @@ parseDOM = (string, options) ->
   out
 
 createElement = (tagName, attribs={}) ->
-  {} =
+  {
     type: ElementType.Tag
     name: tagName.toLowerCase()
     attribs: attribs
     children: []
+  }
 
 createTextNode = (text) ->
-  {} =
+  {
     type: ElementType.Text
     data: text
+  }
 
 cloneNode = (node) ->
   clone = Object.assign({}, node)
